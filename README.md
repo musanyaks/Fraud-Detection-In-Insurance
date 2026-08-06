@@ -30,32 +30,32 @@ An end-to-end machine learning system for detecting fraudulent insurance claims,
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 This project implements a **hybrid fraud detection engine** that combines:
 
-- 🤖 **Machine Learning** — Random Forest classifier (`ranger`) for probabilistic fraud scoring
-- 📜 **Rule Engine** — Deterministic business rules for explainable red flags
-- 🔍 **Feature Engineering** — Automated transformation of raw claims into model-ready features
-- 🚀 **REST API** — Real-time scoring via Plumber with Swagger UI
+-  **Machine Learning** — Random Forest classifier (`ranger`) for probabilistic fraud scoring
+-  **Rule Engine** — Deterministic business rules for explainable red flags
+-  **Feature Engineering** — Automated transformation of raw claims into model-ready features
+-  **REST API** — Real-time scoring via Plumber with Swagger UI
 
 **Model Performance:** AUC ~0.87 on synthetic test data
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Description |
 |---------|-------------|
-| 🔮 **ML Prediction** | Random Forest probability scores for fraud likelihood |
-| 📊 **Rule Flags** | Explainable rules: high amount + new policy, provider risk, multiple claims |
-| ⚡ **Real-time API** | Sub-second scoring via REST endpoints |
-| 🧪 **Synthetic Data** | Built-in data generator with realistic fraud patterns |
-| 🏗️ **R6 Architecture** | Object-oriented design for config, schema, and model registry |
-| 📦 **Model Registry** | Versioned model bundles with metadata and metrics |
-| ✅ **Input Validation** | Schema validation for all incoming claims |
-| 🐳 **Docker Ready** | Containerized deployment support |
-| 🔄 **CI/CD** | GitHub Actions workflow for automated testing |
+|  **ML Prediction** | Random Forest probability scores for fraud likelihood |
+|  **Rule Flags** | Explainable rules: high amount + new policy, provider risk, multiple claims |
+|  **Real-time API** | Sub-second scoring via REST endpoints |
+|  **Synthetic Data** | Built-in data generator with realistic fraud patterns |
+|  **R6 Architecture** | Object-oriented design for config, schema, and model registry |
+|  **Model Registry** | Versioned model bundles with metadata and metrics |
+|  **Input Validation** | Schema validation for all incoming claims |
+|  **Docker Ready** | Containerized deployment support |
+|  **CI/CD** | GitHub Actions workflow for automated testing |
 
 ---
 
@@ -116,7 +116,7 @@ Fraud-Detection-In-Insurance/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 # 1. Clone the repository
@@ -175,7 +175,7 @@ Rscript -e "library(dplyr); library(ranger); library(plumber); cat('All packages
 
 ---
 
-## 🎮 Usage
+##  Usage
 
 ### 1. Generate Data
 
@@ -326,7 +326,7 @@ Score a single insurance claim for fraud.
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for detailed system design.
 
@@ -401,7 +401,7 @@ default:
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 Run the test suite:
 
@@ -433,7 +433,7 @@ See [docker/README.md](docker/README.md) for details.
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
@@ -443,13 +443,13 @@ See [docker/README.md](docker/README.md) for details.
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙋 Support
+##  Support
 
 If you encounter issues:
 
@@ -460,4 +460,4 @@ If you encounter issues:
 
 ---
 
-**Built with ❤️ in R**
+**Built with Passion in R**
