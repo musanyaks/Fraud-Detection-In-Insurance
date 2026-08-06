@@ -9,31 +9,20 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: rocker/r-ver:4.4.1
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install system dependencies
-        run: |
-          apt-get update
-          apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.1'
 
-      - name: Install R packages
+      - name: Install dependencies
         run: |
-          Rscript -e "
-            install.packages(c(
-              'dplyr', 'ranger', 'pROC', 'plumber', 'R6', 'yaml',
-              'logger', 'vip', 'checkmate', 'jsonlite', 'testthat',
-              'purrr', 'tidyr', 'rlang', 'data.table'
-            ), repos='https://cloud.r-project.org/')
-          "
+          Rscript -e "install.packages(c('dplyr','ranger','pROC','plumber','R6','yaml','logger','vip','checkmate','jsonlite','testthat'), repos='https://cloud.r-project.org/')"
 
       - name: Run tests
         run: |
-          Rscript -e "testthat::test_dir('tests/testthat')"
-
-      - name: Check package can be loaded
-        run: |
-          Rscript -e "source('R/config.R'); source('R/schema.R'); cat('All modules load OK!\n')"
+          Rscript -e "r_files <- list.files('R', pattern = '\\.R$', full.names = TRUE); invisible(lapply(r_files, source)); testthat::test_dir('tests/testthat')"
