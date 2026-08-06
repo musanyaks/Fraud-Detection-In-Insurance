@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 # scripts/01_generate_data.R
-
+library(dplyr)
 # Source all R files
 r_files <- list.files("R", pattern = "\\.R$", full.names = TRUE)
 invisible(lapply(r_files, source))

@@ -1,7 +1,8 @@
 #!/usr/bin/env Rscript
 # scripts/04_serve_api.R
-
+library(dplyr)
 library(plumber)
+library(ranger)
 
 # Source all R files
 r_files <- list.files("R", pattern = "\\.R$", full.names = TRUE)
