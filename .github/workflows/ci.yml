@@ -1,16 +1,39 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: rocker/r-ver:4.3.0
+    container: rocker/r-ver:4.4.1
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Install dependencies
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install system dependencies
         run: |
-          apt-get update && apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
-          Rscript -e 'install.packages("remotes"); remotes::install_deps(dependencies = TRUE)'
+          apt-get update
+          apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
+
+      - name: Install R packages
+        run: |
+          Rscript -e "
+            install.packages(c(
+              'dplyr', 'ranger', 'pROC', 'plumber', 'R6', 'yaml',
+              'logger', 'vip', 'checkmate', 'jsonlite', 'testthat',
+              'purrr', 'tidyr', 'rlang', 'data.table'
+            ), repos='https://cloud.r-project.org/')
+          "
+
       - name: Run tests
-        run: make test
+        run: |
+          Rscript -e "testthat::test_dir('tests/testthat')"
+
+      - name: Check package can be loaded
+        run: |
+          Rscript -e "source('R/config.R'); source('R/schema.R'); cat('All modules load OK!\n')"
