@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Insurance Fraud Detection System
 
 This project implements an end-to-end fraud detection system for insurance claims.
@@ -30,3 +31,6 @@ Rscript scripts/04_serve_api.R
 
 - `GET /health`: Health check.
 - `POST /predict`: Score a claim for fraud.
+=======
+# Fraud-Detection-In-Insurance
+>>>>>>> 136fcde8344bd7ec104012faaf28193dc76958d3
