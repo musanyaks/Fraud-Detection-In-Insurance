@@ -1,4 +1,7 @@
-library(testthat)
-library(fraud.detection.insurance)
+# Source all R modules first
+r_files <- list.files("R", pattern = "\\.R$", full.names = TRUE)
+invisible(lapply(r_files, source))
 
-test_check("fraud.detection.insurance")
+# Run tests
+library(testthat)
+test_dir("tests/testthat")
