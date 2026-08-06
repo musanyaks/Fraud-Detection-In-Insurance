@@ -1,0 +1,26 @@
+Package: fraud.detection.insurance
+Title: Fraud Detection System for Insurance Claims
+Version: 0.1.0
+Authors@R: person("Arena", "Agent", email = "agent@arena.ai", role = c("aut", "cre"))
+Description: An end-to-end fraud detection system for insurance claims using R, R6, and Plumber.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    R6,
+    yaml,
+    dplyr,
+    purrr,
+    tidyr,
+    rlang,
+    logger,
+    ranger,
+    vip,
+    pROC,
+    plumber,
+    jsonlite,
+    data.table,
+    checkmate
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

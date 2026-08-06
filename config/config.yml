@@ -1,0 +1,21 @@
+default:
+  seed: 42
+  data:
+    n_claims: 1000
+    fraud_rate: 0.05
+  model:
+    target: is_fraud
+    features:
+      - claim_amount
+      - policy_age_days
+      - claimant_age
+      - history_claims_count
+      - provider_risk_score
+    type: ranger
+    params:
+      num.trees: 500
+      mtry: 3
+  paths:
+    data_raw: "data/claims_raw.csv"
+    model_bundle: "artifacts/model_bundle.rds"
+    metrics: "artifacts/metrics.json"

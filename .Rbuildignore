@@ -1,0 +1,11 @@
+^fraud-detection-insurance\.Rproj$
+^\.Rproj\.user$
+^data/
+^artifacts/
+^docs/
+^scripts/
+^api/
+^docker/
+^\.github/
+^Makefile
+^config/
